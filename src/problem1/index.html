@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ways to Sum to N</title>
+    <style>
+        #container {
+            margin: 100px 100px;
+        }
+        
+        .panel {
+            background-color: rgb(219, 218, 217);
+            padding: 10px;
+            margin: 5px 10px 5px 10px;
+        }
+        
+        .panel .code-panel {
+            padding: 10px;
+            background-color: aliceblue;
+        }
+        
+        .result_value {
+            font-size: 20px;
+            font-weight: 700;
+            color: red;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container -->
+    <div id="container">
+        <h1 class="text-center">The Ways to Sum To N</h1>
+        <!-- Start The First Panel-->
+        <div class="panel">
+            <h3>The First Way</h3>
+            <div class="code-panel">
+                <code>
+                    var sum = 0;
+                    for (var i = 0; i <= n; i++) {
+                        sum += i;
+                    }
+                    return sum;
+                </code>
+            </div>
+
+            <hr />
+            <div>
+                <label for="first_test">Test 1: </label>
+                <input type="number" id="first_test" placeholder="Input an Integer N" />
+                <input type="button" value="result" onclick="javascript:test_result(1);" />
+            </div>
+            <div>
+                <p>
+                    <span>The Result: </span> <span class="result_value" id="result_1"></span>
+                </p>
+            </div>
+        </div>
+        <!-- End the First Panel-->
+        <!-- Start the Second Panel -->
+        <div class="panel">
+            <h3>The Second Way</h3>
+            <div class="code-panel">
+                <code>
+                return (1 + n) * n / 2;
+            </code>
+            </div>
+            <hr />
+            <div>
+                <label for="second_test">Test 1: </label>
+                <input type="number" id="second_test" placeholder="Input an Integer N" />
+                <input type="button" value="result" onclick="javascript:test_result(2);" />
+            </div>
+            <div>
+                <p>
+                    <span>The Result: </span> <span class="result_value" id="result_2"></span>
+                </p>
+            </div>
+        </div>
+        <!-- End the Second Panel -->
+        <!-- Start the Third Panel -->
+        <div class="panel">
+            <h3>The Third Way</h3>
+            <div class="code-panel">
+                <code>
+                return [...Array(n + 1).keys()].map(x => x).reduce((x, y) => x + y);
+            </code>
+            </div>
+            <hr />
+            <div>
+                <label for="third_test">Test 1: </label>
+                <input type="number" id="third_test" placeholder="Input an Integer N" />
+                <input type="button" value="result" onclick="javascript:test_result(3);" />
+            </div>
+            <div>
+                <p>
+                    <span>The Result: </span> <span class="result_value" id="result_3"></span>
+                </p>
+            </div>
+        </div>
+        <!-- End the Third Panel -->
+    </div>
+    <!-- End Container -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // first method
+        var sum_to_n_a = function(n) {
+            // your code here
+            var sum = 0;
+            for (var i = 0; i <= n; i++) {
+                sum += i;
+            }
+            return sum;
+        };
+        // second method
+        var sum_to_n_b = function(n) {
+            // your code here
+            return (1 + n) * n / 2;
+        };
+
+        // third method
+        var sum_to_n_c = function(n) {
+            // your code here
+            return [...Array(n + 1).keys()].map(x => x).reduce((x, y) => x + y);
+        };
+        // test methods
+        var test_result = function(_type) {
+            if (_type === 1) {
+
+                var n = Number($("#first_test").val());
+                if (n < 1) {
+                    alert("Invalid N");
+                    return;
+                }
+                var sum = sum_to_n_a(n);
+                $("#result_1").text(sum);
+            } else if (_type === 2) {
+                var n = Number($("#second_test").val());
+                if (n < 1) {
+                    alert("Invalid N");
+                    return;
+                }
+                var sum = sum_to_n_b(n);
+                $("#result_2").text(sum);
+            } else if (_type === 3) {
+                var n = Number($("#third_test").val());
+                if (n < 1) {
+                    alert("Invalid N");
+                    return;
+                }
+                var sum = sum_to_n_c(n);
+                $("#result_3").text(sum);
+            } else {
+                alert('Invalid method!');
+                return;
+            }
+        }
+    </script>
+</body>
+
+</html>
