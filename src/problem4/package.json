@@ -1,0 +1,25 @@
+{
+  "name": "problem4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@ethersproject/bignumber": "^5.5.0",
+    "@ethersproject/contracts": "^5.5.0",
+    "@ethersproject/providers": "^5.5.3",
+    "@ethersproject/units": "^5.5.0",
+    "dotenv": "^16.0.0",
+    "ts-node": "^10.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
