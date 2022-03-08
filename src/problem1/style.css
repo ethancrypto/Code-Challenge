@@ -1,0 +1,24 @@
+#container {
+    margin: 100px 100px;
+}
+
+.panel {
+    background-color: rgb(219, 218, 217);
+    padding: 10px;
+    margin: 5px 10px 5px 10px;
+}
+
+.panel .code-panel {
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+.result_value {
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+}
+
+.text-center {
+    text-align: center;
+}
